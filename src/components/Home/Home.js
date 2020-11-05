@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 import LoadScreen from '../LoadScreen/LoadScreen'
 
+// logo
+
+import logo from '../../assets/images/logo.png'
+
 const Home = () => {
     const [ isLoaded, setIsLoaded ] = useState(false)
     

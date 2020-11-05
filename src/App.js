@@ -1,4 +1,5 @@
-import './App.css';
+// scss
+import './sass/_base.scss'
 
 import { Switch, Route } from 'react-router-dom'
 
