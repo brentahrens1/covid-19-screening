@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import LoadScreen from '../LoadScreen/LoadScreen'
 
-// logo
+// scss
+import '../../sass/_home.scss'
 
+// logo
 import logo from '../../assets/images/logo.png'
 
 const Home = () => {
@@ -10,7 +12,7 @@ const Home = () => {
     
     useEffect(() => {
         setTimeout(() => {
-            setIsLoaded(!isLoaded)
+            setIsLoaded(true)
         }, 3000)
     }, [])
 
@@ -20,7 +22,47 @@ const Home = () => {
                 isLoaded ? 
                 (
                     <div className="home">
-                        <h1>Home</h1>
+                        <div className="home__form">
+                            <div className="logo">
+                                <img src={logo} alt="Company logo goes here" />
+                            </div>
+                            <h1>Covid-19 Health Screening</h1>
+                            <form>
+                                <input type="text" />
+                                <p>Employee Name</p>
+                                <select value="department">
+                                    <option>IT</option>
+                                    <option>Reception</option>
+                                    <option>Clinician</option>
+                                </select>
+                                <p>Department Name</p>
+                                <p>1. Have you had a fever of 100.4 degrees or higher or a new or worsening cough/ shortness of breath/ sore throat or body aches?</p>
+                                <div className="checkbox-container">
+                                    <div className="checkboxes">
+                                        <input className="checkbox-input" type="checkbox" name="yes" />
+                                        <label htmlFor="yes">Yes</label>
+                                    </div>
+                                    <div className="checkboxes">
+                                        <input className="checkbox-input" type="checkbox" name="no" />
+                                        <label htmlFor="no">No</label>
+                                    </div>
+                                </div>
+                                <p>2. Have you had close contact (6 fett or less and for 15 minutes or more) with a known Covid-19 patient?</p>
+                                <div className="checkbox-container">
+                                    <div className="checkboxes">
+                                        <input className="checkbox-input" type="checkbox" name="yes" />
+                                        <label htmlFor="yes">Yes</label>
+                                    </div>
+                                    <div className="checkboxes">
+                                        <input className="checkbox-input" type="checkbox" name="no" />
+                                        <label htmlFor="no">No</label>
+                                    </div>
+                                </div>
+                                <p>If your response is yes to either question please notify your supervisor immediatley.</p>
+                                <p>Seek a doctors advice in addition to use this App before making any medical decisions.</p>
+                                <button>Submit</button>
+                            </form>
+                        </div>
                     </div>
                 )
                 :
