@@ -43,6 +43,10 @@
             height: 100%;
             margin-top: 2rem;
 
+            &.hide {
+                display: none;
+            }
+
             input, select {
                 background: transparent;
                 border: none;

@@ -9,7 +9,11 @@ import logo from '../../assets/images/logo.png'
 
 const Home = () => {
     const [ isLoaded, setIsLoaded ] = useState(false)
-    const [ isActive, setIsActive ] = useState(false)
+    const [ isSubmitted, setIsSubmitted ] = useState(false)
+
+    const handleSubmit = () => {
+        setIsSubmitted(!isSubmitted)
+    }
     
     useEffect(() => {
         setTimeout(() => {
@@ -27,8 +31,22 @@ const Home = () => {
                             <div className="logo">
                                 <img src={logo} alt="Company logo goes here" />
                             </div>
-                            <h1>Covid-19 Health Screening</h1>
-                            <form>
+                            {
+                                isSubmitted ? 
+                                (
+                                    <>
+                                    <h1>Thank you</h1>
+                                    <p>Your Covid-19 health screening has been submited to your manager. Have a great day</p>
+                                    </>
+                                )
+                                :
+                                (   
+                                    <>
+                                    <h1>Covid-19 Health Screening</h1>
+                                    </>
+                                )
+                            }
+                            <form className={`${isSubmitted ? "hide" : ""}`}>
                                 <input type="text" />
                                 <p>Employee Name</p>
                                 <select>
@@ -61,7 +79,7 @@ const Home = () => {
                                 </div>
                                 <p>If your response is yes to either question please notify your supervisor immediatley.</p>
                                 <p>Seek a doctors advice in addition to use this App before making any medical decisions.</p>
-                                <button>Submit</button>
+                                <button onClick={handleSubmit}>Submit</button>
                             </form>
                         </div>
                     </div>
