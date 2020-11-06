@@ -85,3 +85,57 @@
         }
     }
 }
+
+
+@media (min-width: 800px) {
+    .home {
+    
+        &__form {
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 3rem;
+            align-items: flex-start;
+    
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 5rem;
+            }
+
+            .logo-container {
+                margin-top: -3rem;
+                width: 40%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .logo {
+                    width: 20rem;
+                    margin: 0 auto;
+        
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+    
+            form {
+                width: 70%;
+                height: 100%;
+                margin: 0 auto;
+    
+                &.hide {
+                    display: none;
+                }
+
+                .input-p, .checkbox-container {
+                    margin-bottom: 3rem;
+                }
+    
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
