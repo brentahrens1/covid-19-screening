@@ -53,7 +53,7 @@ const Home = () => {
                                     <input type="text" />
                                     <p className="input-p">Employee Name</p>
                                     <select>
-                                        <option>IT</option>
+                                        <option></option>
                                         <option>Reception</option>
                                         <option>Clinician</option>
                                     </select>
