@@ -116,6 +116,11 @@
                 margin: 0 auto;
                 margin-top: 3.5rem;
                 cursor: pointer;
+
+                a:link, a:visited {
+                    text-decoration: none;
+                    color: #fff;
+                }
             }
         }
     }

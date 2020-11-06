@@ -7,6 +7,9 @@ import '../../sass/_home.scss'
 // logo
 import logo from '../../assets/images/logo.png'
 
+//router
+import { Link } from 'react-router-dom'
+
 const Home = () => {
     const [ isLoaded, setIsLoaded ] = useState(false)
     const [ isChecked1, setIsChecked1 ] = useState(false)
@@ -67,7 +70,7 @@ const Home = () => {
                                     </div>
                                     <p>If your response is yes to either question please notify your supervisor immediatley.</p>
                                     <p>Seek a doctors advice in addition to use this App before making any medical decisions.</p>
-                                    <button>Submit</button>
+                                    <button><Link to="/thank-you">Submit</Link></button>
                                 </form>
                             </div>
                         </div>
