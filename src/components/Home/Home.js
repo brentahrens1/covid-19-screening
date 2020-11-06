@@ -9,15 +9,10 @@ import logo from '../../assets/images/logo.png'
 
 const Home = () => {
     const [ isLoaded, setIsLoaded ] = useState(false)
-    const [ isSubmitted, setIsSubmitted ] = useState(false)
     const [ isChecked1, setIsChecked1 ] = useState(false)
     const [ isChecked2, setIsChecked2 ] = useState(false)
     const [ isChecked3, setIsChecked3 ] = useState(false)
     const [ isChecked4, setIsChecked4 ] = useState(false)
-
-    const handleSubmit = () => {
-        setIsSubmitted(!isSubmitted)
-    }
     
     useEffect(() => {
         setTimeout(() => {
@@ -38,22 +33,8 @@ const Home = () => {
                                 </div>
                             </div>
                             <div>
-                                {
-                                    isSubmitted ? 
-                                    (
-                                        <>
-                                        <h1>Thank you</h1>
-                                        <p>Your Covid-19 health screening has been submited to your manager. Have a great day</p>
-                                        </>
-                                    )
-                                    :
-                                    (   
-                                        <>
-                                        <h1>Covid-19 Health Screening</h1>
-                                        </>
-                                    )
-                                }
-                                <form className={`${isSubmitted ? "hide" : ""}`}>
+                                <h1>Covid-19 Health Screening</h1>
+                                <form>
                                     <input type="text" />
                                     <p className="input-p">Employee Name</p>
                                     <select>
@@ -86,7 +67,7 @@ const Home = () => {
                                     </div>
                                     <p>If your response is yes to either question please notify your supervisor immediatley.</p>
                                     <p>Seek a doctors advice in addition to use this App before making any medical decisions.</p>
-                                    <button onClick={handleSubmit}>Submit</button>
+                                    <button>Submit</button>
                                 </form>
                             </div>
                         </div>
