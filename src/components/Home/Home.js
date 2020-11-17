@@ -25,6 +25,7 @@ const Home = () => {
     const [ no1, setNo1 ] = useState('')
     const [ yes2, setYes2 ] = useState('')
     const [ no2, setNo2 ] = useState('')
+    const [isDisabled, setIsDisabled] = useState(false)
     const history = useHistory()
 
     const box1 = () => {
@@ -66,7 +67,6 @@ const Home = () => {
             console.log(error.message)
         })
 
-        console.log(yes1)
         setName('')
         setDepartment('')
         setYes1('')
@@ -132,7 +132,7 @@ const Home = () => {
                                     </div>
                                     <p>If your response is yes to either question please notify your supervisor immediatley.</p>
                                     <p>Seek a doctors advice in addition to use this App before making any medical decisions.</p>
-                                    <button onClick={handleSubmit}>Submit</button>
+                                    <button disabled={!name || !department || (!yes1 && !no1) || (!yes2 && !no2)} onClick={handleSubmit}>Submit</button>
                                 </form>
                             </div>
                         </div>
