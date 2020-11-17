@@ -25,6 +25,7 @@ const Home = () => {
     const [ no1, setNo1 ] = useState('')
     const [ yes2, setYes2 ] = useState('')
     const [ no2, setNo2 ] = useState('')
+    const history = useHistory()
 
     const box1 = () => {
         setIsChecked1(!isChecked1)
@@ -54,7 +55,7 @@ const Home = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(db)
+        history.push('/thank-you')
         db.collection('contacts').add({
             name: name,
             department, department,
@@ -99,9 +100,9 @@ const Home = () => {
                             <div>
                                 <h1>Covid-19 Health Screening</h1>
                                 <form>
-                                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
                                     <p className="input-p">Employee Name</p>
-                                    <select value={department} onChange={(e) => setDepartment(e.target.value)}>
+                                    <select value={department} onChange={(e) => setDepartment(e.target.value)} required>
                                         <option></option>
                                         <option>Reception</option>
                                         <option>Clinician</option>
@@ -110,22 +111,22 @@ const Home = () => {
                                     <p>1. Have you had a fever of 100.4 degrees or higher or a new or worsening cough/ shortness of breath/ sore throat or body aches?</p>
                                     <div className="checkboxes">
                                         <div className="checkboxes__inner">
-                                            <input className={`${!isChecked1 ? "active" : ""}`} onClick={box1} type="checkbox" name="yes" value={yes1} />
+                                            <input className={`${!isChecked1 ? "active" : ""}`} onClick={box1} type="checkbox" name="yes" value={yes1} required />
                                             <label className="checkboxes" htmlFor="yes">Yes</label>
                                         </div>
                                         <div className="checkboxes__inner">
-                                            <input className={`${!isChecked2 ? "active" : ""}`} onClick={box2} type="checkbox" name="no" value={no1} />
+                                            <input className={`${!isChecked2 ? "active" : ""}`} onClick={box2} type="checkbox" name="no" value={no1} required />
                                             <label className="checkboxes" htmlFor="no">No</label>
                                         </div>
                                     </div>
                                     <p>2. Have you had close contact (6 fett or less and for 15 minutes or more) with a known Covid-19 patient?</p>
                                     <div className="checkboxes">
                                         <div className="checkboxes__inner">
-                                            <input className={`${!isChecked3 ? "active" : ""}`} onClick={box3} type="checkbox" name="yes" value={yes2} />
+                                            <input className={`${!isChecked3 ? "active" : ""}`} onClick={box3} type="checkbox" name="yes" value={yes2} required />
                                             <label className="checkboxes" htmlFor="yes">Yes</label>
                                         </div>
                                         <div className="checkboxes__inner">
-                                            <input className={`${!isChecked4 ? "active" : ""}`} onClick={box4} type="checkbox" name="no" value={no2}/>
+                                            <input className={`${!isChecked4 ? "active" : ""}`} onClick={box4} type="checkbox" name="no" value={no2} required />
                                             <label className="checkboxes" htmlFor="no">No</label>
                                         </div>
                                     </div>
