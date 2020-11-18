@@ -25,7 +25,6 @@ const Home = () => {
     const [ no1, setNo1 ] = useState('')
     const [ yes2, setYes2 ] = useState('')
     const [ no2, setNo2 ] = useState('')
-    const [isDisabled, setIsDisabled] = useState(false)
     const history = useHistory()
 
     const box1 = () => {
