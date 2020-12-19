@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react'
 import LoadScreen from '../LoadScreen/LoadScreen'
 
-// firebase 
-import { db } from '../Firebase/Firebase'
-
 // scss
 import '../../sass/_home.scss'
 
@@ -26,7 +23,8 @@ const Home = () => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
+        clearInputs()
         history.push('/thank-you')
     }
 
