@@ -24,6 +24,10 @@ const Home = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        fetch('http://localhost:5001/covid-screening-form-67a63/us-central1/app/api/screening', {
+            method: 'POST',
+            body: JSON.stringify({ ...screeningFormData, selectedOption, selectedOption2 })
+        })
         clearInputs()
         history.push('/thank-you')
     }
