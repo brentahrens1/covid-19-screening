@@ -13,8 +13,8 @@ import { Link, useHistory } from 'react-router-dom'
 const Home = () => {
     const [ isLoaded, setIsLoaded ] = useState(false)
     const [ screeningFormData, setScreeningFormData ] = useState({})
-    const [ selectedOption, setSelectedOption ] = useState('no')
-    const [ selectedOption2, setSelectedOption2 ] = useState('no')
+    const [ selectedOption, setSelectedOption ] = useState('')
+    const [ selectedOption2, setSelectedOption2 ] = useState('')
 
     const history = useHistory()
 
@@ -41,6 +41,9 @@ const Home = () => {
 
     const handleOptionChange = (e) => {
         setSelectedOption(e.target.value)
+    }
+
+    const handleOptionChange2 = (e) => {
         setSelectedOption2(e.target.value)
     }
     
@@ -98,6 +101,7 @@ const Home = () => {
                                     </div>
                                     <p>2. Have you had close contact (6 fett or less and for 15 minutes or more) with a known Covid-19 patient?</p>
                                     <div className="checkbox-container">
+
                                         <div className="checkbox">
                                             <label htmlFor="yes">Yes</label>
                                             <input 
@@ -105,7 +109,7 @@ const Home = () => {
                                                 name="question-two" 
                                                 value="yes" 
                                                 checked={selectedOption2 === 'yes'}
-                                                onChange={handleOptionChange} 
+                                                onChange={handleOptionChange2} 
                                             />
                                         </div>
                                         <div className="checkbox">
@@ -115,7 +119,7 @@ const Home = () => {
                                                 name="question-two" 
                                                 value="no"
                                                 checked={selectedOption2 === 'no'}
-                                                onChange={handleOptionChange}
+                                                onChange={handleOptionChange2}
                                             />
                                         </div>
                                     </div>
