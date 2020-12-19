@@ -70,52 +70,23 @@
                 margin-bottom: 3rem;
             }
 
-            .checkboxes {
-                width: 100%;
+            .checkbox-container {
                 display: flex;
+                justify-content: space-between;
+                width: 10rem;
 
-                .checkboxes:nth-child(1) {
-                    margin-right: 4rem;
+                .checkbox {
+                    width: 4rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                 }
 
-                &__inner {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: relative;
+                input[type=radio] {
                     cursor: pointer;
-                    width: 5rem;
-                    user-select: none;
-                    margin-bottom: 3rem;
-
-                    input {
-                        border: 1px solid #000;
-                        width: 15px;
-                        cursor: pointer;
-                        position: relative;
-                        height: 0;
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            width: 15px;
-                            height: 15px;
-                            top: -.4rem;
-                            left: -5px;
-                            background: #E1E1E1;
-                            border: 1px solid #000;
-                            border-radius: 50%;
-                        }
-
-                        &.active {
-                            &::after {
-                                background: #459CA0;
-                                border: 1px solid #459CA0;
-                            } 
-                        }
-                    }
                 }
             }
+
 
             button {
                 background: #459CA0;
