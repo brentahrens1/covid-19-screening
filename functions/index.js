@@ -24,14 +24,15 @@ app.post('/api/screening', async (req,res) => {
         subject: `COVID-19 Screen Results for ${name}: ${
             selectedOption === 'yes' || selectedOption2 === 'yes' ? "Warning" : "All Clear"
         }`,
-        text:
-        `Department: ${department}
-        1. Have you had a fever of 100.4 degrees or higher or a new or worsening cough/ shortness of breath/ sore throat or body aches? ${selectedOption}
-        2. Have you had close contact (6 fett or less and for 15 minutes or more) with a known Covid-19 patient? ${selectedOption2}`
+        html: 
+        `<div>
+            <p>Department: ${department}</p>
+            <p>1. Have you had a fever of 100.4 degrees or higher or a new or worsening cough/ shortness of breath/ sore throat or body aches? ${selectedOption}</p>
+            <p>2. Have you had close contact (6 fett or less and for 15 minutes or more) with a known Covid-19 patient? ${selectedOption2}</p>
+        </div>`
     }
     if (selectedOption === 'yes' || selectedOption2 === 'yes') {
         msg.cc = 'cidida@gmail.com'
-        console.log(msg)
     }
     try {
         const mailRes = await sgMail.send(msg)
