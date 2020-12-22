@@ -89,7 +89,7 @@ const Home = () => {
                                     />
                                 </div>
                             </div>
-                            <p>2. Have you had close contact (6 fett or less and for 15 minutes or more) with a known Covid-19 patient?</p>
+                            <p>2. Have you had close contact (6 feet or less and for 15 minutes or more) with a known Covid-19 patient?</p>
                             <div className="checkbox-container">
 
                                 <div className="checkbox">
