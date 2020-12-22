@@ -115,7 +115,7 @@ const Home = () => {
                             </div>
                             <p>If your response is yes to either question please notify your supervisor immediatley.</p>
                             <p>Seek a doctors advice in addition to use this App before making any medical decisions.</p>
-                            <button disabled={screeningFormData === {}, selectedOption === '', selectedOption2 === ''} onClick={handleSubmit}>Submit</button>
+                            <button className={`${screeningFormData !== {} && selectedOption !== '' && selectedOption2 !== '' ? "show" : ""}`} disabled={screeningFormData === {}, selectedOption === '', selectedOption2 === ''} onClick={handleSubmit}>Submit</button>
                         </form>
                     </div>
                 </div>

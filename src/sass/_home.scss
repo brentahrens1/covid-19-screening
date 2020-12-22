@@ -89,7 +89,7 @@
 
 
             button {
-                background: #459CA0;
+                background: lighten(#459CA0, 15%);
                 color: #fff;
                 border: none;
                 padding: .5rem;
@@ -104,6 +104,10 @@
                 a:link, a:visited {
                     text-decoration: none;
                     color: #fff;
+                }
+
+                &.show {
+                    background: #459CA0;
                 }
             }
         }
