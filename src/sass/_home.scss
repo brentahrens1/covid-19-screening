@@ -84,7 +84,10 @@
                     border: none;
                     padding: 0;
                     background: none;
-                    -webkit-appearance: none;
+
+                    label {
+                        margin-right: 1rem;
+                    }
                 }
 
                 input[type=radio] {
@@ -163,6 +166,14 @@
                 .input-p, .checkbox-container {
                     margin-top: .3rem;
                     margin-bottom: 3rem;
+                }
+
+                .checkbox-container {
+                    .checkbox {
+                        label {
+                            margin-right: 0;
+                        }
+                    }
                 }
             }
         }
